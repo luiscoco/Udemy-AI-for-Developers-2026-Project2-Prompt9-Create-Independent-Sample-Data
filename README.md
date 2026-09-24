@@ -1,4 +1,4 @@
-# Contract Validation Smoke Tests
+# Create Independent Sample Data
 
 A polyglot monorepo with an Angular 22 frontend, a FastAPI backend and **one shared OpenAPI
 contract**. The contract is the single source of truth: TypeScript types and Pydantic models
