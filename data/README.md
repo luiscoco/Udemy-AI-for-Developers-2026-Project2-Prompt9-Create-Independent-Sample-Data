@@ -240,7 +240,36 @@ How the script works:
 
 ---
 
-## 6. Changing the data
+## 6. Running the app on Windows
+
+Open Windows Terminal (PowerShell) and run these commands from the repository root, the folder that contains `package.json`. The path contains spaces, so put it in quotes:
+
+```powershell
+cd "C:\path\to\Prompt9"
+npm run setup     # first time only: npm install + uv sync for the backend
+npm run dev       # starts the frontend and the backend together; Ctrl+C stops both
+```
+
+> **Current status:** the Angular app and the FastAPI server are not scaffolded yet. `npm run dev` prints a `TODO` line for each and exits, and **the API does not load these fixture files yet**. The expected values in section 4 will apply once the backend serves this data.
+
+What you can run today:
+
+```powershell
+npm test          # contract and backend tests
+npm run verify    # drift check, lint, typecheck, test and build
+```
+
+To check the fixtures, save the script from section 5 as `check-fixtures.cjs` in the repository root, then run:
+
+```powershell
+node check-fixtures.cjs
+```
+
+For requirements and fixes for common Windows problems, see [Running on Windows](../README.md#running-on-windows) in the main README.
+
+---
+
+## 7. Changing the data
 
 - Give each new work order the next free number, e.g. `wo-0016` / `WO-2026-0016`. Never reuse a number.
 - Keep the state and the technician consistent with the lifecycle in 3.1. For example, a `reported` order has no technician, and an `in_progress` order has one.
